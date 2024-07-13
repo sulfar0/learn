@@ -1,0 +1,5 @@
+#!/bin/bash
+
+paswd=$( zenity --title="Insert Passphrase" --text=masukan --entry="password" )
+hostn=$( zenity --title="insert Hostname" --text=masukan --entry="nama" ) &&
+echo "$paswd" | sudo -S sh -c  echo "echo $hostn > /etc/hostname"

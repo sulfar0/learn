@@ -1,0 +1,19 @@
+#!/bin/bash
+
+list=$( zenity --title="Downloader ISO" --text=choose --list --column=name debian arch garuda )
+
+if [[ $list == "debian" ]]; then
+	echo "Downloading Debian"
+	curl -L -o debian.iso https://cdimage.debian.org/debian-cd/current/amd64/iso-dvd/debian-12.6.0-amd64-DVD-1.iso
+elif [[ $list == "arch" ]]; then
+	echo "Downloading Arch"
+	curl -L -o arch.iso https://mirror.repository.id/archlinux/iso/2024.07.01/archlinux-2024.07.01-x86_64.iso 
+elif [[ $list == "garuda" ]]; then
+	echo "Downloading Garuda"
+	curl -L -o garuda.iso https://iso.builds.garudalinux.org/iso/latest/garuda/gnome/latest.iso
+else
+	echo "Not Found"
+fi
+
+
+
